@@ -7,8 +7,8 @@ import 'package:get/get.dart';
 
 class VideosPage extends StatelessWidget {
   const VideosPage({
-    Key? key,
-    required this.modelData,
+    Key key,
+    this.modelData,
   }) : super(key: key);
 
   final CommunityModel modelData;
@@ -56,14 +56,14 @@ class VideosPage extends StatelessWidget {
                           child: Text(modelData.title,
                               style: Theme.of(context)
                                   .textTheme
-                                  .subtitle1!
+                                  .subtitle1
                                   .copyWith(color: Colors.black)),
                         ),
                         const SizedBox(height: 5),
                         Text('88 videos',
                             style: Theme.of(context)
                                 .textTheme
-                                .subtitle2!
+                                .subtitle2
                                 .copyWith(color: Colors.black)),
                       ],
                     )),
@@ -81,40 +81,56 @@ class VideosPage extends StatelessWidget {
                               playVideoData: showVideos,
                             ));
                       },
-                      child: Column(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Container(
-                            height: 25 * SizeConfig.heightMultiplier,
-                            width: 100 * SizeConfig.widthMultiplier,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage(
-                                    showVideos.imageAsset,
-                                  ),
-                                  fit: BoxFit.cover),
-                            ),
-                          ),
+                              padding: EdgeInsets.all(18),
+                              height: 15 * SizeConfig.heightMultiplier,
+                              width: 40 * SizeConfig.widthMultiplier,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(15),
+                                child: Image.asset(showVideos.imageAsset,
+                                    fit: BoxFit.cover),
+                              )),
                           Padding(
                             padding: EdgeInsets.symmetric(
-                                horizontal: 3 * SizeConfig.widthMultiplier,
                                 vertical: 2 * SizeConfig.heightMultiplier),
-                            child: Row(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                CircleAvatar(
-                                  radius: 20,
-                                  backgroundImage:
-                                      AssetImage(showVideos.imageAsset),
-                                ),
                                 Padding(
-                                  padding: const EdgeInsets.only(left: 8.0),
+                                  padding: const EdgeInsets.only(left: 2.0),
                                   child: Text(showVideos.videotitle,
                                       style: Theme.of(context)
                                           .textTheme
-                                          .subtitle2!
+                                          .subtitle1
                                           .copyWith(
                                               color: Colors.black,
                                               fontWeight: FontWeight.normal)),
-                                )
+                                ),
+                                SizedBox(height: 3),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    CircleAvatar(
+                                      radius: 12,
+                                      backgroundImage:
+                                          AssetImage(showVideos.imageAsset),
+                                    ),
+                                    SizedBox(
+                                        width:
+                                            1.5 * SizeConfig.widthMultiplier),
+                                    Text(showVideos.title,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .caption
+                                            .copyWith(
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.normal)),
+                                  ],
+                                ),
                               ],
                             ),
                           )

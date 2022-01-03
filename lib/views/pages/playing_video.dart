@@ -6,8 +6,8 @@ import 'package:get/get.dart';
 
 class PlayVideo extends StatelessWidget {
   const PlayVideo({
-    Key? key,
-    required this.playVideoData,
+    Key key,
+    this.playVideoData,
   }) : super(key: key);
 
   final CommunityModel playVideoData;
@@ -45,7 +45,7 @@ class PlayVideo extends StatelessWidget {
             child: Text(playVideoData.videotitle,
                 style: Theme.of(context)
                     .textTheme
-                    .subtitle1!
+                    .subtitle1
                     .copyWith(color: Colors.black)),
           ),
           SizedBox(height: 3 * SizeConfig.heightMultiplier),
@@ -71,12 +71,12 @@ class PlayVideo extends StatelessWidget {
                         Text(suggestedVideo.videotitle,
                             style: Theme.of(context)
                                 .textTheme
-                                .subtitle2!
+                                .subtitle2
                                 .copyWith(color: Colors.black)),
                         Text(suggestedVideo.title,
                             style: Theme.of(context)
                                 .textTheme
-                                .bodyText2!
+                                .bodyText2
                                 .copyWith(color: Colors.grey))
                       ],
                     )

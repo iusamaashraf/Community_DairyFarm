@@ -4,8 +4,8 @@ class CommunityModel {
   final String videotitle;
 
   CommunityModel({
-    required this.imageAsset,
-    required this.title,
-    required this.videotitle,
+    this.imageAsset,
+    this.title,
+    this.videotitle,
   });
 }

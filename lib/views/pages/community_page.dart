@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CommunityPage extends StatelessWidget {
-  const CommunityPage({Key? key}) : super(key: key);
+  const CommunityPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class CommunityPage extends StatelessWidget {
             'Community',
             style: Theme.of(context)
                 .textTheme
-                .subtitle1!
+                .subtitle1
                 .copyWith(color: Colors.black, fontWeight: FontWeight.w600),
           ),
           centerTitle: true,
@@ -53,7 +53,7 @@ class CommunityPage extends StatelessWidget {
                               Text(showData.title,
                                   style: Theme.of(context)
                                       .textTheme
-                                      .subtitle1!
+                                      .subtitle1
                                       .copyWith(color: Colors.black))
                             ],
                           )
